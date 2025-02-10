@@ -7,31 +7,35 @@ import Image from 'next/image';
 export default function Dashboard() {
   useEffect(() => {
     const cards = document.querySelectorAll('.card');
-    
+  
     cards.forEach(card => {
       card.addEventListener('mousemove', (e) => {
         const { offsetX, offsetY, target } = e;
-        const { offsetWidth, offsetHeight } = target;
+        const { offsetWidth, offsetHeight } = target as HTMLElement;
         const xPos = (offsetX / offsetWidth) * 100;
         const yPos = (offsetY / offsetHeight) * 100;
-        
-        const hoverBg = target.querySelector('.hover-bg');
-        hoverBg.style.transform = `translate(-${xPos}%, -${yPos}%)`;
+  
+        const hoverBg = (target as HTMLElement).querySelector('.hover-bg') as HTMLElement;
+        if (hoverBg) {
+          hoverBg.style.transform = `translate(-${xPos}%, -${yPos}%)`;
+        }
       });
-      
+  
       card.addEventListener('mouseleave', () => {
-        const hoverBg = card.querySelector('.hover-bg');
-        hoverBg.style.transform = 'scale(3)';
+        const hoverBg = card.querySelector('.hover-bg') as HTMLElement;
+        if (hoverBg) {
+          hoverBg.style.transform = 'scale(3)';
+        }
       });
     });
-
+  
     return () => {
       cards.forEach(card => {
         card.removeEventListener('mousemove', () => {});
         card.removeEventListener('mouseleave', () => {});
       });
     };
-  }, []);
+  }, []);  
 
   return (
     <div className="min-h-screen bg-[#34564f] text-white">
