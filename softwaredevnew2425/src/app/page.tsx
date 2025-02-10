@@ -13,10 +13,10 @@ export default function Dashboard() {
           <Image src="/logo.png" alt="Sproutify Logo" width={200} height={40} className="hover:opacity-80 transition-opacity" />
         </div>
         <div className="space-x-4">
-          <Link href="">
+          <Link href="/">
             <button className="px-4 py-2 border border-white text-white rounded-lg hover:bg-[#2b4a44] transition-colors">Login</button>
           </Link>
-          <Link href="">
+          <Link href="/">
             <button className="px-4 py-2 bg-white text-[#34564f] rounded-lg hover:bg-gray-100 transition-colors">Sign Up</button>
           </Link>
         </div>
