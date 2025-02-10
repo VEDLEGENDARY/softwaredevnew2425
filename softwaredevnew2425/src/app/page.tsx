@@ -1,41 +1,9 @@
 'use client';
 
-import { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Dashboard() {
-  useEffect(() => {
-    const cards = document.querySelectorAll('.card');
-  
-    cards.forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const { offsetX, offsetY, target } = e;
-        const { offsetWidth, offsetHeight } = target as HTMLElement;
-        const xPos = (offsetX / offsetWidth) * 100;
-        const yPos = (offsetY / offsetHeight) * 100;
-  
-        const hoverBg = (target as HTMLElement).querySelector('.hover-bg') as HTMLElement;
-        if (hoverBg) {
-          hoverBg.style.transform = `translate(-${xPos}%, -${yPos}%)`;
-        }
-      });
-  
-      card.addEventListener('mouseleave', () => {
-        const hoverBg = card.querySelector('.hover-bg') as HTMLElement;
-        if (hoverBg) {
-          hoverBg.style.transform = 'scale(3)';
-        }
-      });
-    });
-  
-    return () => {
-      cards.forEach(card => {
-        card.removeEventListener('mousemove', () => {});
-        card.removeEventListener('mouseleave', () => {});
-      });
-    };
-  }, []);  
 
   return (
     <div className="min-h-screen bg-[#34564f] text-white">
@@ -67,7 +35,7 @@ export default function Dashboard() {
             <div className="hover-bg"></div>
             <h3 className="text-xl font-semibold text-gray-100 mb-3">Crop Recommendations</h3>
             <p className="text-gray-300">
-              Our AI-powered system uses data from various sources, including climate patterns, soil health, and market trends, to provide personalized crop recommendations. By analyzing regional factors, it helps farmers choose the best crops that are most likely to thrive, ensuring higher yield and profitability. Whether you're growing grains, vegetables, or fruits, our tool can optimize your planting strategy to match both environmental conditions and market demand. With this guidance, you can make informed decisions that improve your farm's sustainability and economic success. Tailored recommendations empower you to maximize your farm's potential year after year.
+              Our AI-powered system uses data from various sources, including climate patterns, soil health, and market trends, to provide personalized crop recommendations. By analyzing regional factors, it helps farmers choose the best crops that are most likely to thrive, ensuring higher yield and profitability. Whether you&apos;re growing grains, vegetables, or fruits, our tool can optimize your planting strategy to match both environmental conditions and market demand. With this guidance, you can make informed decisions that improve your farm&apos;s sustainability and economic success. Tailored recommendations empower you to maximize your farm&apos;s potential year after year.
             </p>
           </div>
 
@@ -76,7 +44,7 @@ export default function Dashboard() {
             <div className="hover-bg"></div>
             <h3 className="text-xl font-semibold text-gray-100 mb-3">Weather Insights</h3>
             <p className="text-gray-300">
-              Stay ahead of changing weather conditions with hyper-local forecasts designed specifically for your region. Our platform delivers precise weather predictions, including temperature, rainfall, humidity, and wind patterns, to help you make better decisions on when to plant, irrigate, and harvest. Historical weather data is also accessible, giving you the ability to compare current conditions with past seasons and identify trends. By using weather insights, you can minimize risks like crop damage from unexpected weather events and better plan for optimal farming outcomes. Trust in accurate, timely weather information to guide your farm's operations and protect your investment.
+              Stay ahead of changing weather conditions with hyper-local forecasts designed specifically for your region. Our platform delivers precise weather predictions, including temperature, rainfall, humidity, and wind patterns, to help you make better decisions on when to plant, irrigate, and harvest. Historical weather data is also accessible, giving you the ability to compare current conditions with past seasons and identify trends. By using weather insights, you can minimize risks like crop damage from unexpected weather events and better plan for optimal farming outcomes. Trust in accurate, timely weather information to guide your farm&apos;s operations and protect your investment.
             </p>
           </div>
 
@@ -103,7 +71,7 @@ export default function Dashboard() {
             <div className="hover-bg"></div>
             <h3 className="text-xl font-semibold text-gray-100 mb-3">Pest Control Tips</h3>
             <p className="text-gray-300">
-              Early detection of pests is crucial for protecting your crops from potential damage and loss. Our AI-powered detection system helps you identify pests before they become a major issue. In addition to pest identification, the platform provides eco-friendly and cost-effective control methods, minimizing the need for harmful chemicals. By using natural pest management strategies, you can reduce the environmental impact of your farm while ensuring that your crops remain healthy. With pest control tips tailored to your specific needs, you'll be able to act quickly and effectively, reducing crop losses and maintaining a healthy farming environment.
+              Early detection of pests is crucial for protecting your crops from potential damage and loss. Our AI-powered detection system helps you identify pests before they become a major issue. In addition to pest identification, the platform provides eco-friendly and cost-effective control methods, minimizing the need for harmful chemicals. By using natural pest management strategies, you can reduce the environmental impact of your farm while ensuring that your crops remain healthy. With pest control tips tailored to your specific needs, you&apos;ll be able to act quickly and effectively, reducing crop losses and maintaining a healthy farming environment.
             </p>
           </div>
 
