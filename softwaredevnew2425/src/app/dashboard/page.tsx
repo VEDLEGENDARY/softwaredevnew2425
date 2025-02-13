@@ -3,33 +3,34 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function Dashboard() {
+export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#34564f] text-white">
       {/* Navbar */}
-      <nav className="flex justify-between items-center p-6 bg-[#34564f] border-b border-[#2b4a44]">
-        <div className="flex items-center gap-2">
+      <nav className="flex justify-between items-center p-6 bg-[#34564f] sticky top-0 bg-opacity-50 border-b-2 border-[#2b4a44] z-50 backdrop-blur-[8px] backdrop-filter: blur(8px);">
+        <div className="flex items-center">
           <Image src="/logo.png" alt="Sproutify Logo" width={200} height={40} className="hover:opacity-80 transition-opacity" />
         </div>
         <div className="space-x-4">
-          <Link href="/">
+          <Link href="/login">
             <button className="px-4 py-2 border border-white text-white rounded-lg hover:bg-[#2b4a44] transition-colors">Login</button>
           </Link>
-          <Link href="/">
+          <Link href="/signup">
             <button className="px-4 py-2 bg-white text-[#34564f] rounded-lg hover:bg-gray-100 transition-colors">Sign Up</button>
           </Link>
         </div>
       </nav>
 
+
       {/* Dashboard Content */}
-      <main className="container mx-auto py-10 px-6">
+      <main className="container mx-auto py-10 px-14">
         <h2 className="text-6xl font-bold text-gray-100 mb-4">Welcome to Sproutify</h2>
         <p className="text-gray-300 mb-8">
           Your AI-powered farming assistant. Get tailored insights for crop management, weather forecasts, and soil health to maximize your farm’s potential.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-9">
           {/* Crop Recommendations Card */}
           <div className="bg-[#2b4a44] rounded-xl p-6 hover:shadow-2xl transition-shadow card">
             <div className="hover-bg"></div>
@@ -79,7 +80,7 @@ export default function Dashboard() {
           <div className="bg-[#2b4a44] rounded-xl p-6 hover:shadow-2xl transition-shadow card">
             <div className="hover-bg"></div>
             <h3 className="text-xl font-semibold text-gray-100 mb-3">Irrigation Guidance</h3>
-            <p className="text-gray-300">
+            <p className="text-gray-300 text-4xl ">
               Efficient water management is essential for both cost savings and sustainable farming practices. Our irrigation guidance system helps you optimize water usage, ensuring your crops receive the right amount of water at the right time. By analyzing weather forecasts, soil moisture levels, and crop water requirements, the system generates smart irrigation schedules that reduce waste and promote healthy plant growth. This helps prevent over-watering, which can lead to waterlogged soil, and under-watering, which can stunt crop development. With better irrigation practices, you’ll conserve water resources while boosting crop performance and profitability.
             </p>
           </div>
